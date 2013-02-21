@@ -1,24 +1,4 @@
-###
-# Page command
-###
-
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
-
-# Proxy (fake) files
-# page "/this-page-has-no-template.html", :proxy => "/template-file.html" do
-#   @which_fake_page = "Rendering a fake page with a variable"
-# end
+## Page command ########
 
 # Use KSS for awesome styleguide support
 require "kss"
@@ -32,9 +12,7 @@ require "kss"
 end
 
 
-###
-# Helpers
-###
+## Helpers #############
 
 # Methods defined in the helpers block are available in templates
 helpers do
@@ -59,16 +37,14 @@ helpers do
 
 end
 
-# Change the CSS directory
-set :css_dir, "css"
+set :css_dir, 'css'
+set :js_dir, 'js'
+set :images_dir, 'img'
 
-# Change the JS directory
-set :js_dir, "js"
 
-# Change the images directory
-set :images_dir, "img"
 
-# Build-specific configuration
+## Build-specific configuration #########
+
 configure :build do
   # For example, change the Compass output style for deployment
   # activate :minify_css
@@ -89,10 +65,4 @@ configure :build do
 
   # Or use a different image path
   # set :http_path, "/Content/images/"
-
-  # Localization (i18n)
-  # First: gem install middleman-i18n
-  # require "middleman-i18n"
-  # activate :i18n
-  # localize :langs => [:en], :mount_at_root => :en
 end

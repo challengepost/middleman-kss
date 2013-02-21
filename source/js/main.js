@@ -1,1 +1,1 @@
-//= require "plugins"
+//= require_directory "./lib"

@@ -1,16 +1,14 @@
-source :rubygems
+source 'https://rubygems.org'
 
-# gem "middleman", "~>2.0.14"
 gem "middleman", "~>3.0.0.beta.1"
-
-# Faster LiveReload and config.rb update speed
-gem "rb-fsevent" #mac
-# gem "rb-inotify" #linux
-# gem "rb-fchange" #win
-
-gem "therubyracer"
-
-gem "compass-susy-plugin"
-# gem "compass-960-plugin"
-
 gem "kss", "~> 0.1.1"
+
+gem "bourbon"
+gem "compass-susy-plugin"
+gem "neat"
+gem "pry-debugger"
+gem "rake"
+gem "rb-fsevent" #mac
+gem "sass"
+gem "therubyracer"
+gem "therubyracer"

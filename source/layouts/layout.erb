@@ -22,6 +22,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
   <%= stylesheet_link_tag "screen" %>
+  <%= stylesheet_link_tag "styleguide" %>
 
   <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
@@ -35,13 +36,11 @@
 <body class="<%= page_classes %>">
   <div class="container">
 
-    <%= partial "header" %>
+    <%= partial 'styleguide/nav' %>
 
     <div id="main" role="main">
       <%= yield %>
     </div>
-
-    <%= partial "footer" %>
 
   </div>
   <%= javascript_include_tag "main" %>

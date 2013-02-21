@@ -60,42 +60,15 @@ require "kss"
 #     @styleguide = Kss::Parser.new('source/css')
 #   end
 # end
-page "/styleguide/index.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
+
+(['/index.html'] + Dir['source/styleguide/*html.erb']).each do |f|
+  file = f.gsub(%r{^source}, "").gsub(%r{\.erb}, "")
+
+  page file do
+    @styleguide = Kss::Parser.new('source/css')
+  end
 end
-page "/styleguide/01_structure.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/02_colors.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/03_typography.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/04_links.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/05_buttons.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/06_forms.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/07_tables.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/08_dialogs.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/09_graphic.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/10_navigation.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
-page "/styleguide/11_modules.html", :layout => "layouts/styleguide" do
-  @styleguide = Kss::Parser.new('source/css')
-end
+
 
 ###
 # Helpers

@@ -18,8 +18,6 @@ GEM
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.1)
-    compass-susy-plugin (0.9)
-      compass (>= 0.11.1)
     debugger (1.2.4)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.1.1)
@@ -98,7 +96,6 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rake (10.0.3)
     rb-fsevent (0.9.3)
     ref (1.0.2)
     sass (3.2.5)
@@ -132,12 +129,10 @@ PLATFORMS
 
 DEPENDENCIES
   bourbon
-  compass-susy-plugin
-  kss (~> 0.1.1)
-  middleman (~> 3.0.0.beta.1)
+  kss
+  middleman
   neat
   pry-debugger
-  rake
   rb-fsevent
   sass
   therubyracer

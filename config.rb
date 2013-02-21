@@ -1,36 +1,4 @@
 ###
-# Compass
-###
-
-# Susy grids in Compass
-# First: gem install compass-susy-plugin
-require "susy"
-
-
-# Change Compass configuration
-compass_config do |config|
-  config.output_style = :expanded
-end
-
-###
-# Haml
-###
-
-# Double-quotes!
-set :haml, { :attr_wrapper => "\"", :layout_engine => :erb }
-
-# CodeRay syntax highlighting in Haml
-# First: gem install haml-coderay
-# require 'haml-coderay'
-
-# CoffeeScript filters in Haml
-# First: gem install coffee-filter
-# require 'coffee-filter'
-
-# Automatic image dimensions on image_tag helper
-# activate :automatic_image_sizes
-
-###
 # Page command
 ###
 
@@ -54,12 +22,6 @@ set :haml, { :attr_wrapper => "\"", :layout_engine => :erb }
 
 # Use KSS for awesome styleguide support
 require "kss"
-# When filename globbing is put back in Middleman 3, this will be much less ugly
-# ['01_structure','02_colors','03_typography','04_links','05_buttons','06_forms','07_tables','08_dialogs','09_graphic','10_navigation','11_modules'].each do |name|
-#   page "/styleguide/#{name}.html", layout => "layouts/styleguide" do
-#     @styleguide = Kss::Parser.new('source/css')
-#   end
-# end
 
 (['/index.html'] + Dir['source/styleguide/*html.erb']).each do |f|
   file = f.gsub(%r{^source}, "").gsub(%r{\.erb}, "")

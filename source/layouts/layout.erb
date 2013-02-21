@@ -10,14 +10,15 @@
 
   <%#= stylesheet_link_tag "screen" %>
   <%#= stylesheet_link_tag "styleguide" %>
+  <%= stylesheet_link_tag "style" %>
 
   <%#= yield_content :head %>
 </head>
 
 <body>
   <div class="container">
-    <%= partial 'styleguide/nav' %>
     <div id="main" role="main"><%= yield %></div>
+    <%= partial 'styleguide/nav' %>
   </div>
   <%= javascript_include_tag "main" %>
 </body>

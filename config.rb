@@ -57,15 +57,6 @@ helpers do
     @_out_buf = out
   end
 
-  # Calculate the years for a copyright
-  def copyright_years(start_year)
-    end_year = Date.today.year
-    if start_year == end_year
-      start_year.to_s
-    else
-      start_year.to_s + '-' + end_year.to_s
-    end
-  end
 end
 
 # Change the CSS directory
@@ -89,7 +80,7 @@ configure :build do
   # activate :cache_buster
 
   # Use relative URLs
-  activate :relative_assets
+  # activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher

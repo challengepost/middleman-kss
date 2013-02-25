@@ -1,6 +1,16 @@
-@import "compass";
-
 $kss-nav-margin:200px;
+
+div.container {
+  @include outer-container;
+
+  nav {
+    @include span-columns(2 of 12);
+  }
+
+  #main {
+    @include span-columns(10 of 12);
+  }
+}
 
 .styleguide-header {
   background:#F8922F;

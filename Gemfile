@@ -1,14 +1,18 @@
 source 'https://rubygems.org'
 
 gem "middleman"
+gem "middleman-core"
+gem "middleman-livereload"
+
 gem "kss"
 
 gem "sass"
 gem "bourbon"
 gem "neat"
-# gem "compass-susy-plugin"
 
-gem "rb-fsevent" #mac
+gem "rb-fsevent"
 gem "therubyracer"
 
 gem "pry-debugger"
+
+gem "document_mapper"

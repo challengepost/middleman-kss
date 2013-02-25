@@ -1,11 +1,13 @@
-// Generated from lib/kss.coffee
 (function() {
   var KssStateGenerator;
   KssStateGenerator = (function() {
     function KssStateGenerator() {
-      var disabled, hover, idx, idxs, rule, stylesheet, _i, _len, _len2, _ref, _ref2;
+      var disabled, hover, focus, active, idx, idxs, rule, stylesheet, _i, _len, _len2, _ref, _ref2;
       hover = /:hover/;
+      active = /:active/;
+      focus = /:focus/;
       disabled = /:disabled/;
+
       try {
         _ref = document.styleSheets;
         for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -14,7 +16,9 @@
           _ref2 = stylesheet.cssRules;
           for (idx = 0, _len2 = _ref2.length; idx < _len2; idx++) {
             rule = _ref2[idx];
-            if (rule.type === CSSRule.STYLE_RULE && (hover.test(rule.selectorText) || disabled.test(rule.selectorText))) {
+            if (rule.type === CSSRule.STYLE_RULE && (hover.test(rule.selectorText) ||
+                disabled.test(rule.selectorText) || active.test(rule.selectorText) ||
+                focus.test(rule.selectorText))) {
               this.insertRule(rule.cssText.replace(':', '.pseudo-class-'));
             }
           }

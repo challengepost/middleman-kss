@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
 
@@ -8,17 +8,17 @@
   <title><%= data.page.title %></title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <%#= stylesheet_link_tag "screen" %>
-  <%#= stylesheet_link_tag "styleguide" %>
   <%= stylesheet_link_tag "style" %>
 
-  <%#= yield_content :head %>
+  <%= yield_content :head %>
 </head>
 
 <body>
   <div class="container">
-    <div id="main" role="main"><%= yield %></div>
     <%= partial 'styleguide/nav' %>
+    <div id="main" role="main">
+      <%= yield %>
+    </div>
   </div>
   <%= javascript_include_tag "main" %>
 </body>

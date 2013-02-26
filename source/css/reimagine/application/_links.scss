@@ -1,5 +1,13 @@
 @import 'reimagine/lib/definitions/colors';
 
+/*
+A button suitable for giving stars to someone.
+
+:hover             - Subtle hover highlight.
+.no-fade       - A highlight indicating you've already given a star.
+
+Styleguide 4.0
+*/
 a {
   color: $link-color;
   text-decoration: none;

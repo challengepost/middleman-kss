@@ -1,0 +1,83 @@
+$space: 24px;
+
+aside {
+  @include span-columns(3);
+}
+
+article,
+article.with_aside,
+aside {
+  h2 {
+    margin-bottom: $space / 2;
+  }
+
+  p {
+    margin-bottom: $space / 2;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    // The only paragraph in the article. And it really wants lots of space.
+    &.only {
+      margin-bottom: $space * 2;
+    }
+
+  }
+
+  @include media($mobile) {
+    @include span-columns(1 of 1);
+    margin: 0;
+    @include pad;
+  }
+}
+
+.background-wrapper {
+  background: image-url('home/reimagine/shared/2col-bkgd.gif') repeat-y top center;
+
+  @include media($mobile) {
+    background: none;
+  }
+  
+  article.with_aside {
+    padding: 24px 0 24px 2.35765%;
+    
+    @include media($mobile) {
+      padding: 2.35765%;
+    }
+  }
+
+}
+
+article {
+  float: none;
+  @include span-columns(9);
+  padding: $space;
+  background-color: white;
+
+  &.challenge-listing {
+    width: 100%;
+    padding: 0;
+    background: transparent;
+    float: none;
+  }
+}
+
+.lt-ie9 {
+  nav.org-nav,
+  aside {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  aside {
+    padding-right: 0;
+  }
+
+}
+
+span.hidden {
+  display: none;
+  visibility: hidden;
+}

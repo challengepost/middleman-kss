@@ -1,0 +1,29 @@
+.lt-ie9 {
+  footer {
+    .ss-icon {
+      display: none;
+    }
+  }
+
+  .neat-last-column {
+    margin-right: 0 !important;
+  }
+
+  .neat-first-column {
+    clear: left;
+  }
+
+  .cp-logo {
+    margin-right: 0 !important;
+
+    img {
+      width: 197px;
+      height: 31px;
+    }
+  }
+
+  ul#activities li.activity .cell {
+    width: 88%;
+    margin-right: 0;
+  }
+}

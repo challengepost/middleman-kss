@@ -1,0 +1,63 @@
+@import 'reimagine/lib/framework';
+@import 'reimagine/lib/elements';
+@import 'reimagine/lib/definitions';
+
+nav.page-vertical-nav {
+  margin: 24px 0;
+
+  ul {
+    margin: 0;
+
+    li {
+      list-style: none;
+
+      a {
+        @include no-fade;
+        padding: 16px 9px;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+        font-size: 17px;
+        font-weight: 600;
+        opacity: 0.65;
+        color: white;
+        margin-right: 24px;
+
+        &:active,
+        &:focus,
+        &:hover {
+          @include no-fade;
+          background-color: rgba(0, 0, 0, 0.3);
+          border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+          opacity: 1;
+          margin-right: 0px;
+          padding-right: 33px;
+        }
+
+        @include media($mobile) {
+          font-size: 14px;
+          padding: 0.7em 1em;
+        }
+      }
+
+      &.current a {
+        background-color: white;
+        border-bottom: 1px solid transparent;
+        color: $link-color;
+        opacity: 1;
+        margin-right: 0px;
+        padding-right: 33px;
+        @include box-shadow(-2px 1px 2px 0 rgba(0, 0, 0, 0.2));
+      }
+    }
+  }
+
+  @include media($mobile) {
+    margin: 4px 0 16px 0;
+  }
+}
+
+.left-nav {
+  @include media($mobile) {
+    background-color: $side-nav-color;
+  }
+}

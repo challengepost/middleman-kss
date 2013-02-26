@@ -1,0 +1,30 @@
+.contact-us-blurb {
+  text-align: center;
+  margin-right: 24px;
+  color: white;
+
+  a.button {
+    padding: 0.6em 1em;
+    margin-bottom: 6px;
+    width: 100%;
+
+    &:hover {
+      background-color: white;
+      color: $link-color;
+    }
+  }
+
+  .break {
+    // adds line break on desktop but not mobile
+    display: block;
+
+    @include media($mobile) {
+      display: inline;
+    }
+  }
+
+  .tel {
+    font-weight: bold;
+    color: white;
+  }
+}

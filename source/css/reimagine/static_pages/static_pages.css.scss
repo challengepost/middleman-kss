@@ -1,0 +1,99 @@
+$space: 24px;
+
+header.page-header {
+  margin-bottom: $space;
+
+  @include media($mobile) {
+    margin-bottom: 0;
+  }
+}
+
+#page-tools {
+  @include span-columns(1 of 1);
+  background-color: #eee;
+  margin-top: 12px;
+  padding: 12px;
+}
+
+ul, ol {
+  padding: 0;
+  list-style-position: inside;
+  li { padding: 0; }
+}
+
+table.static-pages {
+  width: 100%;
+  margin-top: 24px;
+
+  th { text-align: left; }
+  th, td { padding: 6px; }
+
+  tbody tr:nth-child(odd) {
+    background-color: #f0f0f0;
+  }
+}
+
+form.new_static_page,
+form.edit_static_page {
+  .field { padding-bottom: 24px; }
+
+  input[type='text'] { width: 100%; }
+}
+
+#loading-bar {
+  position: fixed;
+  top: 0;
+  left: 44%;
+  z-index: 1003;
+  background: black;
+  display: none;
+
+  img {
+    position: relative;
+    top: 3px;
+  }
+
+  #loading-message {
+    padding: 5px 15px 5px 42px;
+    color: white;
+    font-size: 0.75em;
+    font-weight: bold;
+    background: image-url('cp-account/layout/ajax-loader.gif') 15px 45% no-repeat;
+  }
+}
+
+// About page:
+
+.image-list li {
+  list-style-type: none;
+  margin-bottom: 40px;
+
+  @include media($mobile) {
+    margin-bottom: 24px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  span.image {
+    width: 123px;
+    float: left;
+    margin-right: 8px;
+
+    @include media($mobile) {
+      @include span-columns(1 of 4);
+      margin-bottom: 8px;
+      margin-right: 10px;
+    }
+
+    img {
+      margin: 0 auto;
+
+      @include media($mobile) {
+        width: 100%;
+        height: inherit;
+      }
+    }
+  }
+}

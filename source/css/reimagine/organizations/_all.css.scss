@@ -1,0 +1,154 @@
+@import 'reimagine/lib/framework';
+@import 'reimagine/lib/definitions';
+
+.orgs section {
+  margin-bottom: 40px;
+
+  h3 {
+    margin: 12px 0;
+  }
+
+  &.actions {
+    text-align: center;
+
+    .button {
+      margin: 0 12px 4px;
+    }
+  }
+
+  @include media($mobile) {
+    margin-bottom: 24px;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+ul.bullets {
+  margin: 0;
+  li {
+    list-style: disc;
+    margin: 0 0 12px 16px;
+  }
+}
+
+// on Overview page mobile view, add space below button that wraps so it doesn't stack ugly
+.learn-more a.software-challenges {
+  @include media($mobile) {
+    margin-bottom: 6px;
+  }
+}
+
+ul.icon-list {
+  // list with icons
+  li {
+    background: image-url("home/organizations/features-icons.png") no-repeat;
+    padding-left: 42px;
+    margin-bottom: 12px;
+
+    // on Overview page
+    &.customizable {
+      background-position: 0 -396px;
+    }
+    &.community {
+      background: image-url("home/organizations/icon-user.png") no-repeat 3px 3px;
+    }
+    &.management {
+      background: image-url("home/organizations/icon-success.png") no-repeat 2px 2px;
+    }
+
+    // on Software Challenges page
+    &.api {
+      background-position: -2px -2px;
+      padding: 4px 0 6px 42px;
+    }
+    &.devs {
+      background: image-url("home/organizations/icon-success.png") no-repeat 1px -4px;
+      padding: 4px 0 6px 42px;
+    }
+    &.awareness {
+      background: image-url("home/organizations/icon-promo.png") no-repeat 0 -2px;
+      padding: 4px 0 6px 42px;
+    }
+
+    // on Open Gov page
+    &.award {
+      background: image-url("home/organizations/icon-prize.png") no-repeat 1px -1px;
+      padding: 4px 0 6px 42px;
+    }
+    &.citizens {
+      background-position: -2px -653px;
+      padding: 4px 0 4px 42px;
+    }
+  }
+}
+
+blockquote {
+  background: image-url("home/organizations/icon-quote.png") no-repeat 12px 21px $light-bkgd-color;
+  padding: 24px 36px 24px 44px;
+  margin: 0;
+  font-style: italic;
+
+  footer {
+    margin-top: 12px;
+    font-size: 13px;
+    font-style: normal;
+  }
+}
+
+a.book {
+  @include span-columns(3 of 9);
+  @include box-shadow(3px 3px 2px 0 rgba(0,0,0,0.25));
+  margin-bottom: 24px;
+
+  &:nth-of-type(3){
+    margin-right: 0;
+  }
+
+  .title,
+  .download {
+    border-left: 12px solid rgba(0, 0, 0, .1);
+    display: block;
+  }
+
+  .title {
+    color: white;
+    padding: 40px 12px 110px;
+  }
+
+  .download {
+    background: white;
+    padding: 10px 12px;
+    color: rgba(0, 0, 0, .5);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    .ss-icon {
+      float: left;
+      margin: 2px 5px 0 0;
+      font-size: 14px;
+    }
+  }
+
+  &.no1 { background-color: #ff795e; } // salmon
+  &.no2 { background-color: #5abbe6; } // light blue
+  &.no3 { background-color: #ffc647; } // yellow
+  &.no4 { background-color: #14c9ab; } // green
+  &.no5 { background-color: #c382d1; } // purple
+
+  &:hover {
+    cursor: pointer;
+    @include box-shadow(3px 3px 2px 0 rgba(0,0,0,0.5));
+
+    .download {
+      color: rgba(0, 0, 0, 1);
+    }
+  }
+
+  @include media($mobile) {
+    @include span-columns(4 of 4);
+  }
+}

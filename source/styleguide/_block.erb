@@ -13,11 +13,14 @@
   </div>
   <div class="styleguide-element">
     <%= @example_html %>
+    <span>
+      <%= @example_html.gsub(%r{<}, "&lt;").gsub(%{>}, "&gt;").gsub("$modifier_class", "") %>
+    </span>
   </div>
   <% @section.modifiers.each do |modifier| %>
     <div class="styleguide-element styleguide-modifier">
       <span class="styleguide-modifier-name"><%= modifier.name %></span>
-      <%= @example_html.sub('$modifier_class', " #{modifier.class_name}") %>
+      <%= @example_html.gsub('$modifier_class', "#{modifier.class_name}") %>
     </div>
   <% end %>
 

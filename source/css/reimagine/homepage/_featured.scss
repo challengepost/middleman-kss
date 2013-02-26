@@ -1,0 +1,115 @@
+@import "reimagine/lib/elements/symbols";
+
+.featured {
+  padding-bottom: 35px;
+  @include fill-parent;
+  text-align: center;
+}
+
+#featured-challenges {
+  @include media($mobile) {
+    background: white;
+    padding-bottom: 16px;
+
+    .section-title span {
+      background: white;
+    }
+  }
+}
+
+.user-awarded-submissions,
+.user-submissions,
+#featured-submissions {
+  background-color: $dark-bkgd-color;
+
+  .submission-listing {
+    @include span-columns(3);
+    display: block;
+    text-align: left;
+
+    .submission-synopsis {
+      @include clearfix;
+      margin-bottom: 10px;
+
+      .submission-photo img {
+        @include border-radius(9px);
+        @include box-shadow(1px 1px 2px 0 rgba(0, 0, 0, 0.65));
+        float: left;
+        margin-right: 14px;
+        max-width: 25%;
+      }
+
+      h3 {
+        color: $link-color;
+      }
+
+      .symbol {
+        color: $icon-color;
+        float: left;
+        font-size: 14px;
+        line-height: 14px;
+        margin-right: 6px;
+        padding-top: 3px;
+      }
+
+      .value {
+        font-family: "proxima-nova-n6","proxima-nova",sans-serif;
+        font-style: normal;
+        color: white;
+      }
+    }
+
+    .description {
+      color: #808080;
+      margin-bottom: 10px;
+    }
+
+    .challenge-title {
+      color: white;
+      font-family: "proxima-nova-n6","proxima-nova",sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+
+      @include media($mobile) {
+        font-size: 11px;
+        line-height: 14px;
+      }
+    }
+
+    &:hover {
+      h3 {
+        color: white;
+        @include fade;
+      }
+
+      .description {
+        @include fade;
+        color: lighten(#808080, 10%);
+      }
+    }
+
+    @include media($mobile) { // BEGIN mobile
+      @include span-columns(4);
+      @include pad;
+      margin-bottom: 0;
+      border-bottom: 3px solid #363636;
+
+      &:last-of-type {
+        border: none;
+        padding-bottom: 0;
+      }
+
+      .submission-photo img {
+        width: 18%; // width of 1 column, minus padding
+      }
+    } // END mobile
+  }
+
+  @include media($mobile) {
+    padding-bottom: 16px;
+  }
+}

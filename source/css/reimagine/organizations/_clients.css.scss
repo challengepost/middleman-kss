@@ -1,0 +1,17 @@
+.clients {
+  .customer-logos {
+    display: block;
+
+    @include media($mobile) {
+      display: none;
+    }
+  }
+
+  .customer-names {
+    display: none;
+
+    @include media($mobile) {
+      display: block;
+    }
+  }
+}

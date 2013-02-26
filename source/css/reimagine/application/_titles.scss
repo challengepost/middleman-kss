@@ -1,0 +1,30 @@
+.section-title {
+  border-top: 3px solid #e0e0e0;
+  clear: both;
+  color: $body-text-color-lighter;
+  font-size: 15px;
+  line-height: 0;
+  letter-spacing: 3px;
+  margin: 40px auto;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+
+  span {
+    background: $light-bkgd-color;
+    padding: 0 10px;
+  }
+
+  &.dark {
+    border-top-color: #363636;
+    color: #666666;
+
+    span {
+      background: $dark-bkgd-color;
+    }
+  }
+
+  @include media($mobile) {
+    margin: 24px auto;
+  }
+}

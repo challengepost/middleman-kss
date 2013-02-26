@@ -1,0 +1,200 @@
+$logo-space: 16px;
+
+.challenge-listing a {
+  @include clearfix;
+  background-color: white;
+  margin-bottom: 12px;
+  color: $body-text-color;
+  display: block;
+  text-align: left;
+
+  @include media($mobile) {
+    @include pad;
+    margin-bottom: 0px;
+    border-bottom: 3px solid #e0e0e0;
+  }
+
+  .challenge-synopsis {
+    $challenge-logo-width: 23%;
+    $mobile-challenge-logo-width: $challenge-logo-width - 5;
+
+    @include span-columns(6);
+
+    .challenge-logo img {
+      float: left;
+      max-width: $challenge-logo-width;
+      margin-right: $logo-space;
+
+      @include media($mobile) {
+        width: $mobile-challenge-logo-width;
+      }
+    }
+
+    h3 {
+      color: $link-color;
+      @include fade;
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+    }
+
+    h3, .challenge-description {
+      padding-left: $challenge-logo-width;
+      margin-left: $logo-space;
+
+      @include media($mobile) {
+        padding-left: $mobile-challenge-logo-width;
+      }
+    }
+
+  }
+
+  .padded {
+    margin-top: $logo-space;
+    margin-bottom: $logo-space;
+
+    @include media($mobile) {
+      margin: 0;
+    }
+  }
+
+  .information {
+    border-left: 2px dotted #e0e0e0;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    float: none;
+    display: table-cell;
+    vertical-align: middle;
+    @include span-columns(2);
+
+    .symbol {
+      width: 32%;
+      color: $icon-color;
+      float: left;
+      @include symbol($icon-color);
+    }
+
+    .text {
+      float: left;
+      width: 68%;
+    }
+
+    .value {
+      font-family: "proxima-nova-n6","proxima-nova",sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      color: black;
+      font-size: 17px;
+      display: block;
+
+      @include media($mobile) {
+        font-size: 14px;
+        line-height: 19px;
+        display: inline;
+      }
+    }
+
+    .action {
+      font-family: "proxima-nova-n6","proxima-nova",sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: lighten($body-text-color, 10%);
+      display: inline-block;
+
+      @include media($mobile) {
+        font-size: 11px;
+        line-height: 14px;
+        display: inline;
+      }
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+      border: 0;
+      margin: 0;
+      padding: 6px 0 0 0;
+
+      .symbol {
+        font-size: 1em;
+        line-height: 1em;
+        padding-top: 3px;
+        margin-right: 6px;
+        width: auto;
+      }
+
+      .text {
+        float: none;
+        width: auto;
+      }
+
+      .value, .action {
+        float: none;
+      }
+
+    }
+
+  }
+
+  .challenge-state {
+    padding-right: 10px;
+    border: 0;
+
+    .button {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include media($mobile) {
+      display: none !important;
+    }
+  }
+
+  &:hover {
+    @include box-shadow(0 0 4px 1px rgba(0, 0, 0, 0.4));
+    @include fade;
+
+    h3 {
+      color: black;
+      @include fade;
+    }
+
+    .button {
+      background-color: darken($link-color, 20%);
+      color: white;
+
+      &.secondary {
+        background-color: $secondary-button-hover-color;
+        color: $secondary-button-hover-font-color;
+        @include fade;
+      }
+
+      &.tertiary {
+        background-color: $tertiary-button-hover-color;
+        color: $tertiary-button-hover-font-color;
+        @include fade;
+      }
+    }
+
+    @include media($mobile) {
+      @include box-shadow(none);
+    }
+  }
+
+}
+
+@include media($mobile) {
+  #featured-challenges .challenge-listing:first-of-type a {
+    padding-top: 0;
+  }
+
+  .challenge-listing:last-of-type a {
+    margin-bottom: 12px;
+  }
+}

@@ -1,0 +1,28 @@
+#our-clients {
+  padding-bottom: 40px;
+  img {
+    max-width: 1020px;
+    width: 100%;
+  }
+  @include media($mobile) {
+    display: none;
+  }
+
+  @include fill-parent;
+  background-color: #ffffff;
+  .section-title {
+    span {
+      background: #ffffff;
+    }
+  }
+
+  .clients-showcase {
+    margin-bottom: 20px;
+  }
+
+  p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 21px;
+  }
+}

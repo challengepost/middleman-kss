@@ -1,0 +1,47 @@
+#case-studies { // case studies page
+  margin: 0;
+
+  li {
+    margin-bottom: 40px;
+    @include span-columns(4 of 9);
+
+    &.odd {
+      clear: left;
+    }
+
+    &.even {
+      @include shift(1);
+      @include omega; // removes right gutter
+    }
+
+    &:last-of-type,
+    &:nth-last-of-type(2) { // removes bottom margin on last 2 examples
+      margin-bottom: 0;
+    }
+
+    img {
+      width: 100%;
+      max-width: 316px;
+    }
+
+    h3 {
+      margin: 0 0 4px 0;
+    }
+
+    @include media($mobile) {
+      width: 100%;
+      margin: 0 0 24px 0;
+
+      &.even {
+        @include shift(0);
+      }
+
+      &:nth-last-of-type(2) {
+        margin-bottom: 24px;
+      }
+    }
+
+    p { margin-bottom: 4px; }
+    span.separator { margin: 0 6px; }
+  }
+}

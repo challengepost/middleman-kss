@@ -1,0 +1,13 @@
+.hidden {
+  visibility: hidden;
+  display: none;
+}
+
+#form_avatar_upload {
+  height: 0px;
+  position: absolute;
+  width: 0px;
+  overflow: hidden;
+}
+
+#topics p.subtitle { margin-bottom: 24px; }

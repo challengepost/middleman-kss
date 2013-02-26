@@ -1,0 +1,150 @@
+#search-bar {
+  @include clearfix;
+  padding: 0 0 16px 0;
+
+  input, button, .styled-select {
+    height: 36px;
+    border: 2px solid #d9d9d9;
+    background: white;
+    line-height: 32px;
+  }
+
+  .styled-select {
+    @include span-columns(3 of 9);
+
+    @include media($mobile) {
+      @include span-columns(12 of 12);
+      margin-bottom: 10px;
+    }
+  }
+
+  select {
+    width: 94%;
+    padding-left: 3%;
+  }
+
+  @include media($mobile) {
+    padding: 10px;
+  }
+}
+
+#search {
+  @include span-columns(3);
+  position: relative;
+
+  input[type="text"] {
+    @include span-columns(3 of 3);
+    @include border-radius(4px);
+    padding: 0 32px 0 10px;
+
+    &::-webkit-input-placeholder {
+      font-style: italic;
+    }
+
+    &:-moz-placeholder {
+      font-style: italic;
+    }
+  }
+
+  #search-button {
+    height: 32px;
+    width: 32px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border: 0;
+    color: #a8a8a8;
+
+    &:hover, &:focus {
+      color: #333;
+    }
+  }
+
+  @include media($mobile) {
+    @include span-columns(12 of 12);
+  }
+}
+
+#filters {
+  @include span-columns(9);
+
+  @include media($mobile) {
+    @include span-columns(12 of 12);
+  }
+}
+
+.styled-select {
+  select {
+    display: block;
+    height: 22px;
+    background: transparent image-url("home/forms/select-arrow.png") 100% 50% no-repeat;
+    border: none;
+    padding: 5px 0;
+    @include appearance(none);
+    @include box-sizing(content-box);
+  }
+}
+
+.load-more {
+  text-align: center;
+}
+
+.search-keywords-reminder {
+  @include clearfix;
+  color: $dark-text-color;
+  padding-bottom: 16px;
+
+  @include media($mobile) {
+    @include fill-parent;
+    padding: 10px;
+  }
+
+  .search-keywords-notification {
+    float: left;
+    margin-right: 16px;
+  }
+  .search-keywords {
+    font-weight: bold;
+  }
+
+  .remove-keywords {
+    color: $body-text-color-lighter;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $dark-text-color;
+    }
+
+    .symbol {
+      float: left;
+      margin: 2px 3px 0 0;
+    }
+
+    @include media($mobile) {
+      :not(.symbol) {
+        display: none;
+      }
+    }
+  }
+}
+
+#search-bar-form {
+  min-height: 500px;
+  padding: 24px 0;
+  @include media($mobile) {
+    min-height: 300px;
+    padding: 10px 0;
+  }
+}
+
+#search-no-results {
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 3em;
+  margin-bottom: 2em;
+
+  h2 {
+    line-height: 1.286em;
+    margin-bottom: 10px;
+  }
+}

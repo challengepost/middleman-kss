@@ -1,0 +1,52 @@
+header.page-header { background-color: $dark-bkgd-color; }
+
+section {
+  &.vcard {
+    color: white;
+
+    figure {
+      @include span-columns(2);
+
+      .photo {
+        max-width: 141px;
+        width: 100%;
+      }
+    }
+
+    .user-info {
+      @include span-columns(10);
+
+      .one-liner {
+        font-style: italic;
+      }
+
+      .url {
+        a {
+          &:hover, &:active, &:focus {
+            color: $secondary-button-color;
+          }
+        }
+      }
+    }
+  }
+
+  &#featured-submissions,
+  &.user-awarded-submissions,
+  &.user-submissions,
+  &.no-participation {
+    padding-bottom: 35px;
+    background-color: inherit;
+    text-align: center;
+
+    .submission-listing {
+      margin-bottom: 32px;
+
+      &:nth-of-type(4n) { margin-right: 0; }
+      &:nth-of-type(4n + 1) { clear: left; }
+    }
+  }
+
+  &.no-participation {
+    p { margin-top: 24px; }
+  }
+}

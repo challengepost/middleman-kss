@@ -1,0 +1,141 @@
+@import "reimagine/lib/elements/symbols";
+
+@mixin social($color: #ffd333) {
+
+  .symbol {
+    float: left;
+
+    margin-right: 10px;
+    @include symbol($color);
+
+    @include media($mobile) {
+      margin-right: 0;
+      float: none;
+    }
+  }
+
+  p {
+    @include fade;
+    &.punchline {
+      color: $dark-text-color;
+      font-weight: 600;
+      line-height: 18px;
+    }
+    &.incentive {
+      color: $body-text-color;
+      font-size: 13px;
+      font-style: italic;
+    }
+  }
+
+  div {
+    @include media($mobile) {
+      display: none;
+    }
+  }
+
+  a {
+    &:hover {
+      .punchline, .incentive {
+        color: $color;
+        @include fade;
+      }
+    }
+
+  }
+}
+
+#footer {
+  padding: 24px 0;
+  @include fill-parent;
+
+  .social-media {
+    @include clearfix;
+    border-bottom: 2px dotted lighten($body-text-color, 35%);
+    padding-bottom: 16px;
+    margin-bottom: 18px;
+
+    .channel {
+      @include span-columns(3);
+      @include media($mobile) {
+        @include span-columns(1);
+        text-align: center;
+      }
+    }
+    @include media($mobile) {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 10px;
+    }
+
+    .facebook {
+      @include social(#264b99);
+    }
+
+    .twitter {
+      @include social(#00a3de);
+    }
+    .blog {
+      @include social(#e88000);
+    }
+    .jobs {
+      @include social(#f72323);
+
+      .symbol {
+        background: #f72323;
+        @include border-radius(80px);
+        color: $light-bkgd-color;
+        font-size: 19px;
+        line-height: 28px;
+        padding: 6px 7px 0 8px;
+      }
+    }
+  }
+
+  .site-map {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    @include media($mobile) {
+      margin-bottom: 10px;
+    }
+  }
+
+  .legal {
+    text-align: right;
+  }
+
+  .site-map {
+    @include span-columns(7 of 12);
+  }
+
+  .legal {
+    @include span-columns(5 of 12);
+  }
+
+  .site-map, .legal {
+    font-size: 12px;
+
+    a {
+      color: $body-text-color;
+      margin-right: 16px;
+      &:hover {
+        color: $dark-text-color;
+      }
+      @include media($mobile) {
+        margin-right: 10px;
+      }
+    }
+    @include media($mobile) {
+      @include span-columns(4 of 4);
+      text-align: center;
+    }
+  }
+
+  .site-map {
+    a:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+}
